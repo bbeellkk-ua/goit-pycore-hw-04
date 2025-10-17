@@ -1,4 +1,5 @@
 from os.path import exists, isdir
+from sys import argv
 from pathlib import Path
 from colorama import Fore, Style
 
@@ -26,7 +27,7 @@ def dir(dir_path):
     path_tree(dir_path)
 
 def main():
-    dir_path = input(f"Введіть шлях до директорії: ")
+    dir_path = input(f"Введіть шлях до директорії: ") if len(argv) == 1 else argv[1]
     dir(dir_path)
 
 if __name__ == "__main__":
